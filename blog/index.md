@@ -1,7 +1,7 @@
 ---
-title: "Blog"
+title: "Beranda"
 layout: default
-description: "Info Terbaru ALADIN66"
+description: "Selamat datang di ALADIN66 — pusat artikel terbaru, ramalan togel, dan tren hiburan digital terkini."
 ---
 
 <div class="post">
