@@ -16,18 +16,18 @@
 </head>
 <body>
   <header class="site">
-    <div class="inner">
-      <a class="brand" href="{{ '/' | relative_url }}">
-        <img src="{{ '/assets/logo.png' | relative_url }}" alt="{{ site.title }}">
-        <span>{{ site.title }}</span> <span class="badge">LIVE</span>
-      </a>
-      <nav style="margin-left:auto">
-        <a href="{{ '/tentang/' | relative_url }}">Tentang</a>
-        <a href="{{ '/kontak/' | relative_url }}">Kontak</a>
-        <a href="{{ '/blog/' | relative_url }}">Blog</a>
-      </nav>
-    </div>
-  </header>
+  <div class="inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/logo.png' | relative_url }}" alt="{{ site.title }}" class="logo">
+      <span class="badge">LIVE</span>
+    </a>
+    <nav class="nav">
+      <a href="{{ '/tentang/' | relative_url }}">Tentang</a>
+      <a href="{{ '/kontak/' | relative_url }}">Kontak</a>
+      <a href="{{ '/blog/' | relative_url }}">Blog</a>
+    </nav>
+  </div>
+</header>
 
   <div class="container">
     {% if page.layout == 'post' %}
