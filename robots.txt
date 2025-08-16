@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jinaladin66.github.io/aladin66/sitemap.xml
