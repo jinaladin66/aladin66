@@ -1,19 +1,20 @@
 ---
 layout: default
 ---
-<article itemscope itemtype="https://schema.org/Article">
+<article class="post" itemscope itemtype="https://schema.org/Article">
   <header>
     <h1 itemprop="headline">{{ page.title }}</h1>
-    <p>
+    <div class="meta">
       <time itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">
         {{ page.date | date: "%d %B %Y" }}
       </time>
-      · <span itemprop="author">{{ page.author }}</span>
-    </p>
+      <span>•</span>
+      <span itemprop="author">{{ page.author }}</span>
+    </div>
     {% if page.image %}
-      <figure>
-        <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" width="1600" height="900" loading="eager" fetchpriority="high" itemprop="image">
-      </figure>
+    <figure>
+      <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" width="1600" height="900" loading="eager" fetchpriority="high" itemprop="image">
+    </figure>
     {% endif %}
   </header>
 
@@ -21,7 +22,6 @@ layout: default
     {{ content }}
   </div>
 
-  <!-- JSON-LD Article -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -30,11 +30,7 @@ layout: default
     "datePublished":"{{ page.date | date_to_xmlschema }}",
     "dateModified":"{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
     "author":{"@type":"Person","name":"{{ page.author | escape }}"},
-    "publisher":{
-      "@type":"Organization",
-      "name":"{{ site.title | escape }}",
-      "logo":{"@type":"ImageObject","url":"{{ '/assets/logo.png' | absolute_url }}"}
-    },
+    "publisher":{"@type":"Organization","name":"{{ site.title | escape }}","logo":{"@type":"ImageObject","url":"{{ '/assets/logo.png' | absolute_url }}"}},
     "mainEntityOfPage":"{{ page.url | absolute_url }}",
     "image":[ "{{ page.image | absolute_url }}" ]
   }
