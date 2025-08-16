@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  {% include head.html %}
+  
+  <!-- Schema untuk Organization -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"{{ site.title }}",
+    "url":"{{ site.url }}",
+    "logo":"{{ '/assets/logo.png' | absolute_url }}",
+    "sameAs":[
+      "https://x.com/aladin66",
+      "https://instagram.com/aladin66"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/logo.png' | relative_url }}" alt="{{ site.title }}" width="180">
+    </a>
+    <nav>
+      <a href="/tentang/">Tentang</a> · <a href="/kontak/">Kontak</a>
+    </nav>
+  </header>
+
+  <main>{{ content }}</main>
+
+  <footer>© {{ site.time | date: "%Y" }} {{ site.title }}</footer>
+</body>
+</html>
