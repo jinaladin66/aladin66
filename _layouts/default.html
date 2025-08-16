@@ -4,34 +4,43 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   {% include head.html %}
-  
-  <!-- Schema untuk Organization -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"Organization",
     "name":"{{ site.title }}",
     "url":"{{ site.url }}",
-    "logo":"{{ '/assets/logo.png' | absolute_url }}",
-    "sameAs":[
-      "https://x.com/aladin66",
-      "https://instagram.com/aladin66"
-    ]
+    "logo":"{{ '/assets/logo.png' | absolute_url }}"
   }
   </script>
 </head>
 <body>
-  <header>
-    <a href="{{ '/' | relative_url }}">
-      <img src="{{ '/assets/logo.png' | relative_url }}" alt="{{ site.title }}" width="180">
-    </a>
-    <nav>
-      <a href="/tentang/">Tentang</a> · <a href="/kontak/">Kontak</a>
-    </nav>
+  <header class="site">
+    <div class="inner">
+      <a class="brand" href="{{ '/' | relative_url }}">
+        <img src="{{ '/assets/logo.png' | relative_url }}" alt="{{ site.title }}">
+        <span>{{ site.title }}</span> <span class="badge">LIVE</span>
+      </a>
+      <nav style="margin-left:auto">
+        <a href="{{ '/tentang/' | relative_url }}">Tentang</a>
+        <a href="{{ '/kontak/' | relative_url }}">Kontak</a>
+        <a href="{{ '/blog/' | relative_url }}">Blog</a>
+      </nav>
+    </div>
   </header>
 
-  <main>{{ content }}</main>
+  <div class="container">
+    {% if page.layout == 'post' %}
+      <div class="hero">
+        <p class="lead">{{ page.description | default: site.description }}</p>
+      </div>
+    {% endif %}
 
-  <footer>© {{ site.time | date: "%Y" }} {{ site.title }}</footer>
+    <main>{{ content }}</main>
+  </div>
+
+  <footer class="site">
+    <div class="container">© {{ site.time | date: "%Y" }} {{ site.title }} · All rights reserved</div>
+  </footer>
 </body>
 </html>
