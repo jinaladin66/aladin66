@@ -1,0 +1,19 @@
+title: "ALADIN66 | Tren Hiburan Digital Masa Kini | Gaya Baru Nikmati Prediksi"
+description: "Temukan cara baru menikmati hiburan digital. ALADIN66 menyajikan prediksi togel eksklusif, keluaran resmi, dan artikel yang relevan setiap hari."
+url: "https://jinaladin66.github.io/aladin66/"
+lang: id
+timezone: Asia/Jakarta
+permalink: /:categories/:title/
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-redirect-from
+
+# Defaults untuk post
+defaults:
+  - scope: { path: "", type: "posts" }
+    values:
+      layout: post
+      author: "Aladin66 Team"
+      image: https://jinaladin66.github.io/aladin66/assets/hero/cover-default-1600x900.webp
