@@ -1,5 +1,5 @@
 ---
-title: "Beranda"
+title: "Blog"
 layout: default
 description: "Info Terbaru ALADIN66"
 ---
