@@ -1,0 +1,8 @@
+{% seo %} <!-- Plugin jekyll-seo-tag, otomatis bikin meta SEO -->
+
+<meta name="robots" content="max-image-preview:large">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="{{ page.image | default: site.image | relative_url }}">
+
+<meta property="og:image" content="{{ page.image | absolute_url }}">
+<meta name="twitter:card" content="summary_large_image">
