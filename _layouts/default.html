@@ -30,14 +30,14 @@
 </header>
 
   <div class="container">
-    {% if page.layout == 'post' %}
-      <div class="hero">
-        <p class="lead">{{ page.description | default: site.description }}</p>
-      </div>
-    {% endif %}
-
-    <main>{{ content }}</main>
-  </div>
+  {% if page.url == '/' or page.title == 'BERANDA' %}
+    <section class="hero">
+      <h1 style="margin:0 0 6px">{{ site.title }}</h1>
+      <p class="lead">{{ page.description | default: site.description }}</p>
+    </section>
+  {% endif %}
+  <main>{{ content }}</main>
+</div>
 
   <footer class="site">
     <div class="container">© {{ site.time | date: "%Y" }} {{ site.title }} · All rights reserved</div>
